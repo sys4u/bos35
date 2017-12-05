@@ -1,3 +1,5 @@
+#! /bin/bash"
+
 docker build -t popoya67/admin --build-arg WARFILE=http://nexus.x2framework.org/nexus/content/groups/public/x2-commerce/admin/0.0.1-SNAPSHOT/admin-0.0.1-20171128.010902-1.war .
 
 docker service rm admin || true
