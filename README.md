@@ -15,7 +15,7 @@ docker service create \
 --network admin-network \
 popoya67/admin
 
-# this is example when using docker 
+# this is example when using docker (but our company use docker swarm. so this is not used at our company.) 
 docker service create --name admin \
 --network admin-network \
 -p 12009:8009 \
