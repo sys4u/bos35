@@ -1,11 +1,11 @@
-#image build
+# image build
 you have to build for docker image.
 WARFILE is argument. you input what you want to deploy 
 ```
 docker build -t popoya67/admin --build-arg WARFILE=http://nexus.x2framework.org/nexus/content/groups/public/x2-commerce/admin/0.0.1-SNAPSHOT/admin-0.0.1-20171128.010902-1.war .
 ```
 
-#service run
+# service run
 next stage, you have to start service.
 this is example when using docker swarm.
 When using docker swarm, you have to configure shared file system. 
