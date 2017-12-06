@@ -1,6 +1,9 @@
 FROM tomcat:8.0.20-jre8
-
+ARG VERSION
 ARG WARFILE
+
+VERSION $VERSION
+
 WORKDIR /
 
 COPY ./catalina.sh /usr/local/tomcat/bin/catalina.sh
