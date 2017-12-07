@@ -42,14 +42,12 @@ jenkins installed in cow server.
    --build-arg WARFILE=${WARFILE} \
    --build-arg VERSION=${VERSION} \
    /root/bos35/
+   sudo docker tag popoya67/admin:${VERSION} lion_ip:12000/x2-commerce-bos:${VERSION}
+   sudo docker login [nexus_repository_ip]:12000 -u [nexus_repository_id] -p [nexus_repository_pw]
+   sudo docker push [nexus_repository_ip]:12000/x2-commerce-bos:${VERSION}
+   ```
   
-  ```
-  sudo docker tag popoya67/admin:${VERSION} lion_ip:12000/x2-commerce-bos:${VERSION}
-  sudo docker login [nexus_repository_ip]:12000 -u [nexus_repository_id] -p [nexus_repository_pw]
-  sudo docker push [nexus_repository_ip]:12000/x2-commerce-bos:${VERSION}
-  ```
-   
-3. execute shell script on remote host using ssh - lion server. Because lion server is manager node, command execute lion server. 
+3. execute shell script on remote host using ssh - lion server. Because lion server is manager node, command execute lion server.   
   ```
   sudo docker login 218.38.15.94:12000 -u [nexus_repository_id] -p [nexus_repository_pw]
   sudo docker service rm x2-commerce-bos || true
