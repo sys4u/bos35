@@ -17,6 +17,7 @@ docker service create \
 --replicas 2 
 -p 12009:8009 --name admin \
 --network admin-network \
+--with-registry-auth 
 popoya67/admin
 ```
 
