@@ -54,7 +54,7 @@ jenkins installed in cow server.
   sudo docker network rm x2-commerce-bos-network || true
   sudo docker network create --driver overlay x2-commerce-bos-network 
   sudo docker service create \
-  --mount type=bind,src=/mnt,dst=/usr/local/tomcat/upload-temp  \
+  --mount type=bind,src=/gluster-mount/x2-bos-data,dst=/usr/local/tomcat/webapps/admin/upload  \
   --replicas 2 \
   --with-registry-auth \
   -p 12009:8009 --name x2-commerce-bos \
