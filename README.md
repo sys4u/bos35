@@ -13,7 +13,7 @@ When using docker swarm, you have to configure shared file system.
 I used glusterfs. 
 ```
 docker service create \
---mount type=bind,src=/mnt,dst=/usr/local/tomcat/upload-temp  \
+--mount type=bind,src=/gluster-mount/x2-bos-data,dst=/usr/local/tomcat/webapps/admin/upload  \
 --replicas 2 
 -p 12009:8009 --name admin \
 --network admin-network \
